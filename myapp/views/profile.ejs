@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+    <% for( let i = 0; i < infoUsuario.length; i++ ) { %>
+        <li><%=infoUsuario[i].fotoPerfil%></li>
+        <li><%=infoUsuario[i].nombre%></li>
+        <button type="submit">SEGUIR</button>
+        <li><%=infoUsuario[i].email%></li>
+    <% } %>
+    </ul>
+    <p>Mis productos</p>
+    <ul>
+    <% for( let i = 0; i < produUsuario.length; i++ ) { %>
+    <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>"></a>
+        <li><%=produUsuario[i].imagenArchivo%></li>
+        <li><%=produUsuario[i].nombre%></li>
+        <li><%=produUsuario[i].descrpcion%></li>
+        <li>Comentarios<%=produUsuario[i].imagenArchivo%></li>
+        <% for( let i = 0; i < comentariosTotal.length; i++ ) { %>
+            <% if (comentariosTotal[i][0]==produUsuario[i].id) { %>
+                <li>Comentarios:<%=comentariosTotale[i][1]%></li>
+            <% } %>
+        <% } %>
+    <% } %>
+    </ul>
+</body>
+</html>

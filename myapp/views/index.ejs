@@ -5,7 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <p>Productos</p>
+    <ul>
+    <% for( let i = 0; i < listaProductos.length; i++ ) { %>
+      <a href="http://localhost:3000/mercado/detalle/<%=listaProductos[i].id%>"></a>
+        <li><%=listaProductos[i].imagenArchivo%></li>
+        <li><%=listaProductos[i].nombre%></li>
+        <li><%=listaProductos[i].descrpcion%></li>
+        <li>Comentarios<%=listaProductos[i].imagenArchivo%></li>
+        <% for( let i = 0; i < comentariosTotal.length; i++ ) { %>
+            <% if (comentariosTotal[i][0]==listaProductos[i].id) { %>
+              <li>Comentarios:<%=comentariosTotale[i][1]%></li>
+            <% } %>
+        <% } %>
+    <% } %>
+    </ul>
   </body>
 </html>
