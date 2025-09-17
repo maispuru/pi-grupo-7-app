@@ -1,8 +1,9 @@
-const dbp = require("../localData/products")
-const dbu = require("../localData/products")
-let productos = dbp.lista
-let usuarios = dbu.lista
-let comentarios = dbp.lista.comentarios
+const dbp = require("../localData/products"); 
+const dbu = require("../localData/user");    
+
+let productos = dbp.productos; 
+let usuario   = dbu.usuario;  
+
 
 function todoComentarios() {
     let array = [];
