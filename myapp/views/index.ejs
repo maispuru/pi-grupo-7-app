@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
   <%- include('./partials/header.ejs') %>
     <p>Productos</p>
-    <ul>
-    <% for( let i = 0; i < listaProductos.length; i++ ) { %>
-      <a href="http://localhost:3000/mercado/detalle/<%=listaProductos[i].id%>"></a>
-        <li><img src="/<%=listaProductos[i].imagenArchivo%>" alt="Producto"></li>
-        <li><%=listaProductos[i].nombre%></li>
-        <li><%=listaProductos[i].descrpcion%></li>
-        <li>Comentarios<%=listaProductos[i].imagenArchivo%></li>
+  <ul>
+   <% for (let i = 0; i < listaProductos.length; i++) { %>
+    <a href="http://localhost:3000/mercado/detalle/<%= listaProductos[i].id %>">
+      <li>
+        <img src="/<%= listaProductos[i].imagenArchivo %>" alt="Producto">
+        <p><%= listaProductos[i].nombre %></p>
+        <p><%= listaProductos[i].descripcion %></p>
         <% for (let j = 0; j < comentariosTotal.length; j++) { %>
           <% if (comentariosTotal[j][0] == listaProductos[i].id) { %>
-              <li>Comentarios: <%= comentariosTotal[j][1].length %></li>
+            <p>Comentarios: <%= comentariosTotal[j][1].length %></p>
           <% } %>
         <% } %>
-    <% } %>
-    </ul>
+      </li>
+    </a>
+   <% } %>
+  </ul>
   </body>
 <%- include('./partials/footer.ejs') %>
 </html>

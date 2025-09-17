@@ -12,12 +12,16 @@
         <li><a href="http://localhost:3000/mercado/edit">Editar</a></li>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
             <li><img src="/<%=listaProducto[i].imagenArchivo%>" alt="Producto"></li>
-            <li><%=listaProducto[i].descrpcion%></li>
+            <li><%=listaProducto[i].descripcion%></li>
         <% } %>
-        <% for( let i = 0; i < productoComentarios.length; i++ ) { %>
-            <li><img src="/<%=productoComentarios[i].comentario[2]%>" alt="Usuarios"></li>
-            <li><%=productoComentarios[i].comentario[1]%></li>
-            <li><%=productoComentarios[i].comentario[0]%></li>
+        <% for (let i = 0; i < productoComentarios.length; i++) { 
+            const c = productoComentarios[i]; %>
+            <li>
+                <% if (c.fotoPerfil) { %>
+                    <img src="/images/user/<%= c.fotoPerfil %>" alt="Usuario">
+                <% } %>
+            <%= c.usuario %>: <%= c.comentario %>
+            </li>
         <% } %>
         <li>
             <form action="" method="post">

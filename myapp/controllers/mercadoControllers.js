@@ -2,8 +2,8 @@ const dbp = require("../localData/products");
 const dbu = require("../localData/user");    
 
 let productos = dbp.productos; 
-let usuario   = dbu.usuario;  
-comentarios
+let usuario   = dbu.usuario;
+
 
 function todoComentarios() {
     let array = [];
@@ -30,23 +30,23 @@ function productosUruarios() {
 function producto(ids) {
     let array = [];
     for (let i = 0; i < productos.length; i++) {
-        let id = productos[i].id   
-        if (ids==id) {
-            array.push(productos[i])
+        let id = productos[i].id;
+        if (ids == id) {
+            array.push(productos[i]);
         }
     }
-    return array
+    return array;
 }
 
 function comentarioProducto(ids) {
     let array = [];
-    for (let i = 0; i < productos.comentarios; i++) {
-        let id = productos[i].id  
-        if (ids==id) {
-            array.push(productos[i].comentarios)
+    for (let i = 0; i < productos.length; i++) {
+        let id = productos[i].id;
+        if (ids == id) {
+            array = productos[i].comentarios;
         }
     }
-    return array
+    return array;
 }
 
 const mercadoController= {
@@ -65,17 +65,17 @@ const mercadoController= {
             comentariosTotal:todoComentarios(),
     } );
     },
-    showPorProducto : function (req, res) {
+    showPorProducto: function (req, res) {
         let idEnviado = req.params.id;
         let detallesProducto = producto(idEnviado);
         let detalleComentarios = comentarioProducto(idEnviado);
-        return res.render("product",{
-            listaProducto:detallesProducto,
-            productoComentarios:detalleComentarios,
-    } );
+        return res.render("product", {
+            listaProducto: detallesProducto,
+            productoComentarios: detalleComentarios
+        });
     },
     showRegister: function (req, res) {
-        return res.render("resgister",{
+        return res.render("register",{
 
     } );
     },
@@ -90,6 +90,7 @@ const mercadoController= {
         comentariosTotal:todoComentarios(),
     } );
     },
+    
     showCrear: function (req, res) {
         return res.render("product-add",{
     } );

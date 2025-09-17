@@ -18,17 +18,17 @@
     <p>Mis productos</p>
     <ul>
     <% for( let i = 0; i < produUsuario.length; i++ ) { %>
-    <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>"></a>
+    <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>">
         <li><img src="/<%=produUsuario[i].imagenArchivo%>" alt="Producto"></li>
         <li><%=produUsuario[i].nombre%></li>
-        <li><%=produUsuario[i].descrpcion%></li>
-        <li>Comentarios<%=produUsuario[i].imagenArchivo%></li>
-        <% for( let i = 0; i < comentariosTotal.length; i++ ) { %>
-            <% if (comentariosTotal[i][0]==produUsuario[i].id) { %>
-                <li>Comentarios:<%=comentariosTotale[i][1]%></li>
+        <li><%=produUsuario[i].descripcion%></li>
+        <% for( let j = 0; j < comentariosTotal.length; j++ ) { %>
+            <% if (comentariosTotal[j][0] == produUsuario[i].id) { %>
+                <li>Comentarios: <%= comentariosTotal[j][1].length %></li>
             <% } %>
         <% } %>
     <% } %>
+    </a>
     </ul >
 <%- include('./partials/footer.ejs') %>
 </body>
