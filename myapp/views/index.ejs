@@ -5,21 +5,22 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
+  <%- include('./partials/header.ejs') %>
     <p>Productos</p>
     <ul>
     <% for( let i = 0; i < listaProductos.length; i++ ) { %>
       <a href="http://localhost:3000/mercado/detalle/<%=listaProductos[i].id%>"></a>
-        <li><%=listaProductos[i].imagenArchivo%></li>
+        <li><img src="/<%=listaProductos[i].imagenArchivo%>" alt="Producto"></li>
         <li><%=listaProductos[i].nombre%></li>
         <li><%=listaProductos[i].descrpcion%></li>
         <li>Comentarios<%=listaProductos[i].imagenArchivo%></li>
-        <% for( let i = 0; i < comentariosTotal.length; i++ ) { %>
-            <% if (comentariosTotal[i][0]==listaProductos[i].id) { %>
-              <li>Comentarios:<%=comentariosTotale[i][1]%></li>
-            <% } %>
+        <% for (let j = 0; j < comentariosTotal.length; j++) { %>
+          <% if (comentariosTotal[j][0] == listaProductos[i].id) { %>
+              <li>Comentarios: <%= comentariosTotal[j][1].length %></li>
+          <% } %>
         <% } %>
     <% } %>
     </ul>
   </body>
+<%- include('./partials/footer.ejs') %>
 </html>

@@ -6,14 +6,26 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
     <ul>
+        <h2>Nombre del producto</h2>
+        <li><a href="http://localhost:3000/mercado/edit">Editar</a></li>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
-            <li><%=listaProducto[i].imagenArchivo%></li>
+            <li><img src="/<%=listaProducto[i].imagenArchivo%>" alt="Producto"></li>
             <li><%=listaProducto[i].descrpcion%></li>
         <% } %>
         <% for( let i = 0; i < productoComentarios.length; i++ ) { %>
-            <li><%=productoComentarios[i].comentario%></li>
+            <li><img src="/<%=productoComentarios[i].comentario[2]%>" alt="Usuarios"></li>
+            <li><%=productoComentarios[i].comentario[1]%></li>
+            <li><%=productoComentarios[i].comentario[0]%></li>
         <% } %>
+        <li>
+            <form action="" method="post">
+                <input type="text" name="comentario" class="comentario-input" placeholder="Agregar comentario" >
+                <button type="submit" class="comentario-btn">AGREGAR COMENTARIO</button>
+            </form>
+        </li>
     </ul>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

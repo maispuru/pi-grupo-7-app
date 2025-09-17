@@ -3,38 +3,20 @@ const dbu = require("../localData/user");
 
 let productos = dbp.productos; 
 let usuario   = dbu.usuario;  
-
+comentarios
 
 function todoComentarios() {
     let array = [];
-    numComentarios=0
-    for (let i = 0; i < array.productos; i++) {
-        let idP= productos[i].id 
-        for (let i = 0; i < array.comentarios; i++) {
-            let idC= comentarios.idProducto
-            if (idP==idC) {
-                numComentarios = numComentarios+1
-                array.push([idP,numComentarios])
-            }
-        }
-        numComentarios=0
-    return array
+    for (let i = 0; i < productos.length; i++) {
+        let idP = productos[i].id;
+        let comentarios = productos[i].comentarios; 
+        array.push([idP, comentarios]);
     }
+    return array;
 }
 
-function detalleUsuario(ids) {
-    let array = [];
-    for (let i = 0; i < usuarios.length; i++) {
-        let id = usuarios[i].id
-        if (ids==id) {
-            array.push(usuarios[i])
-            
-        }
-    }
-    return
-}
-
-function productosUruarios(ids) {
+function productosUruarios() {
+    let ids = usuario.id
     let array = [];
     for (let i = 0; i < productos.length; i++) {
         let id = productos[i].idUsuario
@@ -58,10 +40,10 @@ function producto(ids) {
 
 function comentarioProducto(ids) {
     let array = [];
-    for (let i = 0; i < array.comentarios; i++) {
-        let id = comentarios[i].idProducto  
+    for (let i = 0; i < productos.comentarios; i++) {
+        let id = productos[i].id  
         if (ids==id) {
-            array.push(comentarios[i].comentario)
+            array.push(productos[i].comentarios)
         }
     }
     return array
@@ -76,10 +58,9 @@ const mercadoController= {
     },
     showElUsuario: function (req, res) {
         let idEnviado = req.params.id;
-        let datoUsuarios = detalleUsuario(idEnviado);
         let datoUsuariosProductos = productosUruarios(idEnviado);
         return res.render("profile",{
-            infoUsuario:datoUsuarios,
+            infoUsuario:usuario,
             produUsuario:datoUsuariosProductos,
             comentariosTotal:todoComentarios(),
     } );
@@ -92,6 +73,30 @@ const mercadoController= {
             listaProducto:detallesProducto,
             productoComentarios:detalleComentarios,
     } );
-},
+    },
+    showRegister: function (req, res) {
+        return res.render("resgister",{
+
+    } );
+    },
+    showLog: function (req, res) {
+        return res.render("login",{
+
+    } );
+    },
+    showResultados: function (req, res) {
+        return res.render("search-results",{
+        listaProductos:productos,
+        comentariosTotal:todoComentarios(),
+    } );
+    },
+    showCrear: function (req, res) {
+        return res.render("product-add",{
+    } );
+    },
+    showEditar: function (req, res) {
+        return res.render("product-edit",{
+    } );
+    },
 }
 module.exports = mercadoController ;

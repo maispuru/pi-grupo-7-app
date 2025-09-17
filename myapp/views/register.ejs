@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <%- include('./partials/header.ejs') %>
+    <h2>Formulario de Registración</h2>
+    <form action="http://localhost:3000/mercado/edit" method="post" enctype="multipart/form-data">
+        
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="usuario">Usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+        <label for="fotoPerfil">Foto de perfil:</label><br>
+        <input type="file" id="fotoPerfil" name="fotoPerfil"><br><br>
+
+        <button type="submit">Registrarse</button>
+    </form>
+<%- include('./partials/footer.ejs') %>
 </body>
+
 </html>

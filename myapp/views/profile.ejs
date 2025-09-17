@@ -6,19 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
     <ul>
     <% for( let i = 0; i < infoUsuario.length; i++ ) { %>
-        <li><%=infoUsuario[i].fotoPerfil%></li>
+        <li><img src="/<%=infoUsuario[i].fotoPerfil%>" alt="Perfil"></li>
         <li><%=infoUsuario[i].nombre%></li>
         <button type="submit">SEGUIR</button>
         <li><%=infoUsuario[i].email%></li>
     <% } %>
-    </ul>
+    </ul >
     <p>Mis productos</p>
     <ul>
     <% for( let i = 0; i < produUsuario.length; i++ ) { %>
     <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>"></a>
-        <li><%=produUsuario[i].imagenArchivo%></li>
+        <li><img src="/<%=produUsuario[i].imagenArchivo%>" alt="Producto"></li>
         <li><%=produUsuario[i].nombre%></li>
         <li><%=produUsuario[i].descrpcion%></li>
         <li>Comentarios<%=produUsuario[i].imagenArchivo%></li>
@@ -28,6 +29,7 @@
             <% } %>
         <% } %>
     <% } %>
-    </ul>
+    </ul >
+<%- include('./partials/footer.ejs') %>
 </body>
 </html>

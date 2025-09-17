@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <%- include('./partials/header.ejs') %>
+    <h2>Iniciar Sesión</h2>
+    <form action="/mercado/login" method="post">
+        
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+        <label for="recordarme">
+            <input type="checkbox" id="recordarme" name="recordarme">
+            Recordarme
+        </label><br><br>
+
+        <button type="submit">Ingresar</button>
+    </form>
 </body>
+<%- include('./partials/footer.ejs') %>
 </html>
