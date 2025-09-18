@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
     <h2>Formulario de Registración</h2>
-    <form action="http://localhost:3000/mercado/edit" method="post" enctype="multipart/form-data">
-        
-        <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <form action="http://localhost:3000/mercado/register" method="get">
 
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario" required><br><br>
+        <p>Correo electrónico:</p>
+        <input type="email" name="email" value=""><br><br>
 
-        <label for="contrasena">Contraseña:</label><br>
-        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        <p>Usuario:</p>
+        <input type="text" name="usuario" value=""><br><br>
 
-        <label for="fotoPerfil">Foto de perfil:</label><br>
-        <input type="file" id="fotoPerfil" name="fotoPerfil"><br><br>
+        <p>Contraseña:</p>
+        <input type="password" name="contrasena" value=""><br><br>
+
+        <p>Foto de perfil:</p>
+        <input type="file" name="fotoPerfil" value=""><br><br>
 
         <button type="submit">Registrarse</button>
     </form>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,10 +25,11 @@
             </li>
         <% } %>
         <li>
-            <form action="" method="post">
-                <input type="text" name="comentario" class="comentario-input" placeholder="Agregar comentario" >
-                <button type="submit" class="comentario-btn">AGREGAR COMENTARIO</button>
-            </form>
+        <form action="http://localhost:3000/mercado/detalle/1" method="get">
+            <p>Agregar comentario:</p>
+            <input type="text" name="comentario" value="">
+            <button type="submit">Enviar</button>
+        </form>
         </li>
     </ul>
     <%- include('./partials/footer.ejs') %>
