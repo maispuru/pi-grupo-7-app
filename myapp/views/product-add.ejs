@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>DigitalMac</title>
+=======
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+>>>>>>> e2cf3998757177a05bb94c7f6b9b8454e38b634b
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
     <h2>Agregar producto</h2>
-    <form action="http://localhost:3000/mercado/registrar" method="post">
-        
-        <label for="imagen">Imagen (URL o nombre archivo):</label><br>
-        <input type="text" id="imagen" name="imagen" required><br><br>
+    <form action="http://localhost:3000/mercado/add" method="get">
 
-        <label for="nombre">Nombre del producto:</label><br>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <p>Imagen (URL o archivo):</p>
+        <input type="text" name="imagen" value=""><br><br>
 
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+        <p>Nombre del producto:</p>
+        <input type="text" name="nombre" value=""><br><br>
+
+        <p>Descripción:</p>
+        <textarea name="descripcion"></textarea><br><br>
 
         <button type="submit">Guardar producto</button>
     </form>

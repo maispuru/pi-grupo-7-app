@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>DigitalMac</title>
 
+=======
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+>>>>>>> e2cf3998757177a05bb94c7f6b9b8454e38b634b
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
     <h2>Iniciar Sesión</h2>
-    <form action="/mercado/login" method="post">
+    <form action="http://localhost:3000/mercado/mercado/log" method="GET">
         
         <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" ><br><br>
 
         <label for="contrasena">Contraseña:</label><br>
-        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        <input type="password" id="contrasena" name="contrasena" ><br><br>
 
         <label for="recordarme">
             <input type="checkbox" id="recordarme" name="recordarme">
