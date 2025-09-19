@@ -13,8 +13,14 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <h2>Agregar producto</h2>
-    <form action="http://localhost:3000/mercado/add" method="get">
+   <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Agregar productos</h2>
+			</div>
+	
+    <h2 class="col-12">
+   <i> <form action="http://localhost:3000/mercado/add" method="get">
 
         <p>Imagen (URL o archivo):</p>
         <input type="text" name="imagen" value=""><br><br>
@@ -27,6 +33,8 @@
 
         <button type="submit">Guardar producto</button>
     </form>
+    </i> 
+    </h2>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>

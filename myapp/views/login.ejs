@@ -9,8 +9,15 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <h2>Iniciar Sesión</h2>
-    <form action="http://localhost:3000/mercado/mercado/log" method="GET">
+
+    <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+	
+    <h2 class="col-12">
+   <i> <form action="http://localhost:3000/mercado/mercado/log" method="GET">
         
         <label for="email">Correo electrónico:</label><br>
         <input type="email" id="email" name="email" ><br><br>
@@ -25,6 +32,8 @@
 
         <button type="submit">Ingresar</button>
     </form>
+    </i>
+    </h2>
 </body>
 <%- include('./partials/footer.ejs') %>
 </html>

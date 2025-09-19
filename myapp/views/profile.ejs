@@ -14,12 +14,16 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <ul>
+    <section class="info-usuario container products-wrapper">
+	<div class="row">
     <% for( let i = 0; i < infoUsuario.length; i++ ) { %>
-        <li><img src="/<%=infoUsuario[i].fotoPerfil%>" alt="Perfil"></li>
+        <li><img  class="img-container offset-3 col-2" src= "<%=infoUsuario[i].fotoPerfil%>" alt="Perfil"></li>
         <li><%=infoUsuario[i].nombre%></li>
         <button type="submit">SEGUIR</button>
         <li><%=infoUsuario[i].email%></li>
     <% } %>
+    </div>
+    </section>
     </ul >
     <p>Mis productos</p>
     <ul>
