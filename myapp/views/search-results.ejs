@@ -17,7 +17,7 @@
    <% for (let i = 0; i < listaProductos.length; i++) { %>
     <a href="http://localhost:3000/mercado/detalle/<%= listaProductos[i].id %>">
       <li>
-        <img src="/<%= listaProductos[i].imagenArchivo %>" alt="Producto">
+        <img src="/<%= listaProductos[i].imagen %>" alt="Producto">
         <p><%= listaProductos[i].nombre %></p>
         <p><%= listaProductos[i].descripcion %></p>
         <% for (let j = 0; j < comentariosTotal.length; j++) { %>

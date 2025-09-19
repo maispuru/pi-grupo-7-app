@@ -17,14 +17,14 @@
         <h2>Nombre del producto</h2>
         <li><a href="http://localhost:3000/mercado/edit">Editar</a></li>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
-            <li><img src="/<%=listaProducto[i].imagenArchivo%>" alt="Producto"></li>
+            <li><img src="<%=listaProducto[i].imagen%>" alt="Producto"></li>
             <li><%=listaProducto[i].descripcion%></li>
         <% } %>
         <% for (let i = 0; i < productoComentarios.length; i++) { 
             const c = productoComentarios[i]; %>
             <li>
                 <% if (c.fotoPerfil) { %>
-                    <img src="/images/user/<%= c.fotoPerfil %>" alt="Usuario">
+                    <img src="<%= c.fotoPerfil %>" alt="Usuario">
                 <% } %>
             <%= c.usuario %>: <%= c.comentario %>
             </li>
