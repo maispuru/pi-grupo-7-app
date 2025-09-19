@@ -1,26 +1,41 @@
 <header class="main-header">
-    <div class="container">
+   <div class="container">
+    <div class="row align-items-center">
     <ul>
+      
       <li>
-        <img src="/images/DigitalMac Logo.png " alt="Logo Digital Mac" >
-    </li>
-
+       <div class="col-5 col-md-2">
+        <a href="/mercado/index" class="main-header_home-link">
+         <img class="imagenlogo" src="/images/DigitalMac Logo.png" alt="Logo Digital Mac" >
+         </a>
+       </li>
+        </div>
     <li>
+      <div class="col-7 col-md-6" >
         <form action="http://localhost:3000/mercado/resultados" method="get">
-          <input type="search" name="q" value="" placeholder="Buscar productos, marcas y más">
-          <button type="submit">Mandar</button>
+          <input type="search" name="q" value="" placeholder="Buscar productos, marcas y más" class="search-form_input">
+          <button type="submit" class="search-form_button">Mandar <i class="fas fa-search"></i></button>
         </form>
+       </div>
     </li>
-    </div>
-
-    <li>Todas las opiniones en un solo lugar.</li>
+   </div>
+   <div class="col-12 col-md-4">
+    <a class="main-header_credit-link">
+						<i class="fas fa-hand-holding-usd"></i>
+						Todas las opiniones en un solo lugar.
+				</a>
+   </div>
  <nav class="main-navbar">
-    <li><a href="http://localhost:3000/mercado/index">Todos los productos</a></li>
-    <li><a href="http://localhost:3000/mercado/add">Cargar producto</a></li>
-    <li><a href="http://localhost:3000/mercado/nombre">Nombre del usuario</a></li>
-    <li><a href="">Cerrar sesión</a></li> 
-    <li><a href="http://localhost:3000/mercado/register">Creá tu cuenta</a></li>
-    <li><a href="http://localhost:3000/mercado/Log">Ingresá</a></li>
+  	<ul class="left-navbar">
+      <li><a href="http://localhost:3000/mercado/index">Todos los productos</a></li>
+      <li><a href="http://localhost:3000/mercado/add">Cargar producto</a></li>
+    </ul>
+    <ul class="right-navbar">
+      <li><a href="http://localhost:3000/mercado/nombre">Nombre del usuario </a></li>
+      <li><a href="">Cerrar sesión </a></li> 
+      <li><a href="http://localhost:3000/mercado/register">Creá tu cuenta </a></li>
+      <li><a href="http://localhost:3000/mercado/Log">Ingresá</a></li>
     </ul>
   </nav>
+  </div>
 </header>

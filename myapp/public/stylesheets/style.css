@@ -135,6 +135,13 @@ header .search-form_button,
   padding: 0 10px;
 }
 
+.imagenlogo{
+display: flex;
+flex-wrap: wrap;
+width: 100px;
+align-items: flex-end;
+}
+
 /* Navbar  */
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
