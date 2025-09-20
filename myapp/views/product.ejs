@@ -14,9 +14,9 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <ul>
-        <h2>Nombre del producto</h2>
         <li><a href="http://localhost:3000/mercado/edit">Editar</a></li>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
+            <li><%=listaProducto[i].nombre %></li>
             <li><img src="<%=listaProducto[i].imagen%>" alt="Producto"></li>
             <li><%=listaProducto[i].descripcion%></li>
         <% } %>

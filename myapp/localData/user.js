@@ -10,7 +10,7 @@ const data = {
     domicilio: "Recoleta",
     telefono: "3816319742",
     username: "rosariov",
-    fotoPerfil: ""
+    fotoPerfil: "/images/user/imagen-mujer.jpeg"
   }
 };
 
