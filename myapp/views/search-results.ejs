@@ -10,24 +10,30 @@
 </head>
 <body>
 <%- include('./partials/header.ejs') %>
-  <ul>
-   <% for (let i = 0; i < listaProductos.length; i++) { %>
-    
-
-    <a href="http://localhost:3000/mercado/detalle/<%= listaProductos[i].id %>">
-      <li>
-        <img src="<%= listaProductos[i].imagen %>" alt="Producto">
-        <p><%= listaProductos[i].nombre %></p>
-        <p><%= listaProductos[i].descripcion %></p>
-        <% for (let j = 0; j < comentariosTotal.length; j++) { %>
-          <% if (comentariosTotal[j][0] == listaProductos[i].id) { %>
-            <p>Comentarios: <%= comentariosTotal[j][1].length %></p>
-          <% } %>
+    <div class="container products-wrapper">
+      <div class="row">
+        <% for (let i = 0; i < listaProductos.length; i++) { %>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+              <a href="http://localhost:3000/mercado/detalle/<%= listaProductos[i].id %>">
+                <figure class="product-box_image">
+                  <img class="imagenProductos" src="<%= listaProductos[i].imagen %>" alt="Producto">
+                </figure>
+                <article class="product-box_data">
+                  <h2><%= listaProductos[i].nombre %></h2>
+                  <p><%= listaProductos[i].descripcion %></p>
+                  <% for (let j = 0; j < comentariosTotal.length; j++) { %>
+                    <% if (comentariosTotal[j][0] == listaProductos[i].id) { %>
+                      <p>Comentarios: <%= comentariosTotal[j][1].length %></p>
+                    <% } %>
+                  <% } %>
+                </article>
+              </a>
+            </section>
+          </div>
         <% } %>
-      </li>
-    </a>
-   <% } %>
-  </ul>
+      </div>
+    </div>
 <%- include('./partials/footer.ejs') %>
 </body>
 </html>

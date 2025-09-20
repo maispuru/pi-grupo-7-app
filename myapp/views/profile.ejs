@@ -10,18 +10,26 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <ul>
     <section class="info-usuario container products-wrapper">
-	<div class="row">
+	  <div class="row">
     <% for( let i = 0; i < infoUsuario.length; i++ ) { %>
-        <li><img  class="img-container offset-3 col-2" src= "<%=infoUsuario[i].fotoPerfil%>" alt="Perfil"></li>
-        <li><%=infoUsuario[i].nombre%></li>
-        <button type="submit">SEGUIR</button>
-        <li><%=infoUsuario[i].email%></li>
+        <div class="img-container offset-3 col-2">
+            <img  class="img-container offset-3 col-2" src= "<%=infoUsuario[i].fotoPerfil%>" alt="Perfil" class="foto-perfil">
+        </div>
+        <div class="data-container col-6">
+            <div class="d-flex align-items-center">
+               <%=infoUsuario[i].nombre%>
+              <button type="submit">SEGUIR</button>
+            </div>  
+            <div>
+              <ul>
+               <li><%=infoUsuario[i].email%></li>
+               </ul>
+             </div>
+        </div>   
     <% } %>
     </div>
     </section>
-    </ul >
     <p>Mis productos</p>
     <ul>
     <% for( let i = 0; i < produUsuario.length; i++ ) { %>
