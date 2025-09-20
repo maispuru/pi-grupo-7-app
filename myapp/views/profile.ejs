@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>DigitalMac</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>DigitalMac</title>
 </head>
 <body>
-    <%- include('./partials/header.ejs') %>
-    <section class="info-usuario container products-wrapper">
-	  <div class="row">
-    <% for( let i = 0; i < infoUsuario.length; i++ ) { %>
+  <%- include('./partials/header.ejs') %>
+
+
+  <section class="info-usuario container products-wrapper">
+    <div class="row">
+      <% for (let i = 0; i < infoUsuario.length; i++) { %>
         <div class="img-container offset-3 col-2">
-            <img  class="img-container offset-3 col-2" src= "<%=infoUsuario[i].fotoPerfil%>" alt="Perfil" class="foto-perfil">
+          <img src="<%= infoUsuario[i].fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
         </div>
+
         <div class="data-container col-6">
-            <div class="d-flex align-items-center">
-               <%=infoUsuario[i].nombre%>
-              <button type="submit">SEGUIR</button>
-            </div>  
-            <div>
-              <ul>
-               <li><%=infoUsuario[i].email%></li>
-               </ul>
-             </div>
-        </div>   
-    <% } %>
+          <div class="d-flex align-items-center">
+            <h1 class="main-title"><%= infoUsuario[i].nombre %></h1>
+            <a href="#" class="btn mt-3 ml-4">SEGUIR</a>
+          </div>
+
+          <div>
+            <ul>
+              <li><%= infoUsuario[i].email %></li>
+            </ul>
+          </div>
+        </div>
+      <% } %>
     </div>
-    </section>
-    <p>Mis productos</p>
-    <ul>
-    <% for( let i = 0; i < produUsuario.length; i++ ) { %>
-    <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>">
-        <li><img src="<%=produUsuario[i].imagen%>" alt="Producto"></li>
-        <li><%=produUsuario[i].nombre%></li>
-        <li><%=produUsuario[i].descripcion%></li>
-        <% for( let j = 0; j < comentariosTotal.length; j++ ) { %>
-            <% if (comentariosTotal[j][0] == produUsuario[i].id) { %>
-                <li>Comentarios: <%= comentariosTotal[j][1].length %></li>
-            <% } %>
-        <% } %>
-    <% } %>
-    </a>
-    </ul >
-<%- include('./partials/footer.ejs') %>
+  </section>
+
+
+
+  <div class="container products-wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="products-title">Mis productos</h2>
+      </div>
+
+    
+      <% for (let i = 0; i < produUsuario.length; i++) { %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="product-box">
+            <a href="http://localhost:3000/mercado/detalle/<%= produUsuario[i].id %>">
+              <figure class="product-box_image">
+                <img src="<%= produUsuario[i].imagen %>" alt="Producto">
+              </figure>
+
+              <article class="product-box_data">
+                <h2><%= produUsuario[i].nombre %></h2>
+                <p><%= produUsuario[i].descripcion %></p>
+
+                <% for (let j = 0; j < comentariosTotal.length; j++) { %>
+                  <% if (comentariosTotal[j][0] == produUsuario[i].id) { %>
+                    <p>Comentarios: <%= comentariosTotal[j][1].length %></p>
+                  <% } %>
+                <% } %>
+              </article>
+            </a>
+          </section>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+
+  <%- include('./partials/footer.ejs') %>
 </body>
 </html>
+

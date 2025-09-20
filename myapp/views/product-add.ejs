@@ -10,28 +10,40 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-   <div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
-			</div>
-	
-    <h2 class="col-12">
-   <i> <form action="http://localhost:3000/mercado/add" method="get">
+    <div class="container products-wrapper">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="products-title">Agregar productos</h2>
+    </div>
 
-        <p>Imagen (URL o archivo):</p>
-        <input type="text" name="imagen" value=""><br><br>
+    <section class="col-12 col-md-10 col-lg-8 mx-auto">
+      <form action="http://localhost:3000/mercado/add" method="GET" class="product-add-form">
+        
+        <div class="form-group">
+          <label for="imagen" class="form-label">Imagen (URL o archivo)</label>
+          <input type="text" id="imagen" name="imagen" class="form-input">
+        </div>
 
-        <p>Nombre del producto:</p>
-        <input type="text" name="nombre" value=""><br><br>
+        <div class="form-group">
+          <label for="nombre" class="form-label">Nombre del producto</label>
+          <input type="text" id="nombre" name="nombre" class="form-input">
+        </div>
 
-        <p>Descripción:</p>
-        <textarea name="descripcion"></textarea><br><br>
+        <div class="form-group">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea id="descripcion" name="descripcion" class="form-input" rows="4"></textarea>
+        </div>
 
-        <button type="submit">Guardar producto</button>
-    </form>
-    </i> 
-    </h2>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Guardar producto</button>
+        </div>
+
+      </form>
+    </section>
+  </div>
+</div>
+
+  
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
