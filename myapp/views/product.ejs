@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>DigitalMac</title>
 
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <ul>
-        <li><a href="http://localhost:3000/mercado/edit">Editar</a></li>
+    <div class="container products-wrapper">
+        <div class="d-flex align-items-center">
+            <p class="product-detail-description">
+               <a href="http://localhost:3000/mercado/edit">Editar</a>
+             </p>
+        </div>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
-            <li><%=listaProducto[i].nombre %></li>
-            <li><img src="<%=listaProducto[i].imagen%>" alt="Producto"></li>
-            <li><%=listaProducto[i].descripcion%></li>
+          <div class="product-detail">
+             <div class="row">
+                <article class="col-12 col-lg-8 product-detail-info">
+                    <h2 class="products-title"> <%=listaProducto[i].nombre %> </h2>
+                    <img  class="imagenProducto-2" src="<%=listaProducto[i].imagen%>" alt="Producto">
+                    <P><%=listaProducto[i].descripcion%></P>
+                </article>   
         <% } %>
+     <div class="col-12 col-lg-4">
+      <section class="comments">
         <% for (let i = 0; i < productoComentarios.length; i++) { 
             const c = productoComentarios[i]; %>
-            <li>
+            <article>
                 <% if (c.fotoPerfil) { %>
                     <img src="<%= c.fotoPerfil %>" alt="Usuario">
                 <% } %>
-            <%= c.usuario %>: <%= c.comentario %>
-            </li>
+
+            <div class="data">   
+             <p class="user" ><%= c.usuario %>: <%= c.comentario %> </p>
+            </div>
+            </article>
         <% } %>
-        <li>
-        <form action="http://localhost:3000/mercado/detalle/1" method="get">
-            <p>Agregar comentario:</p>
-            <input type="text" name="comentario" value="">
-            <button type="submit">Enviar</button>
+        </section>
+
+        <form action="http://localhost:3000/mercado/detalle/1" method="get" class="comentario-producto">
+            <p class="form-label">Agregar comentario:</p>
+            <input  class="form-input" type="text" name="comentario" value="">
+            <button type="submit"   class="buy-now-button" >Enviar</button>
         </form>
-        </li>
-    </ul>
+        </div>
+     </div>
+     </div>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>

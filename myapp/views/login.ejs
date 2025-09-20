@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>DigitalMac</title>
 
@@ -10,14 +12,14 @@
 <body>
     <%- include('./partials/header.ejs') %>
 
-    <div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
-			</div>
+<div class="container products-wrapper">
+ <div class="row">
+		<div class="col-12">
+			<h2 class="products-title">Ingresar</h2>
+		</div>
 	
-    <h2 class="col-12">
-   <i> <form action="http://localhost:3000/mercado/mercado/log" method="GET">
+<h2 class="col-12">
+    <form action="http://localhost:3000/mercado/mercado/log" method="GET" class="log-inform">
         
         <label for="email">Correo electrónico:</label><br>
         <input type="email" id="email" name="email" ><br><br>
@@ -31,9 +33,12 @@
         </label><br><br>
 
         <button type="submit">Ingresar</button>
-    </form>
-    </i>
-    </h2>
-</body>
+     </form>
+  </h2>
+ </div>
+</div>  
+
 <%- include('./partials/footer.ejs') %>
+</body>
+
 </html>

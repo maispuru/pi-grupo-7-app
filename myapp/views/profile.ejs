@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>DigitalMac</title>
 </head>
@@ -24,7 +26,7 @@
     <ul>
     <% for( let i = 0; i < produUsuario.length; i++ ) { %>
     <a href="http://localhost:3000/mercado/detalle/<%=produUsuario[i].id%>">
-        <li><img src="/<%=produUsuario[i].imagen%>" alt="Producto"></li>
+        <li><img src="<%=produUsuario[i].imagen%>" alt="Producto"></li>
         <li><%=produUsuario[i].nombre%></li>
         <li><%=produUsuario[i].descripcion%></li>
         <% for( let j = 0; j < comentariosTotal.length; j++ ) { %>
