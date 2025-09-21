@@ -50,7 +50,7 @@ function comentarioProducto(ids) {
 }
 
 const mercadoController= {
-    showListadoProductos : function (req, res) {
+    index : function (req, res) {
         return res.render("index",{
         listaProductos:productos,
         comentariosTotal:todoComentarios(),
@@ -74,7 +74,7 @@ const mercadoController= {
             productoComentarios: detalleComentarios
         });
     },
-    showRegister: function (req, res) {
+    storeRegister: function (req, res) {
         return res.render("register",{
 
     } );
@@ -91,11 +91,11 @@ const mercadoController= {
     } );
     },
     
-    showCrear: function (req, res) {
+    create: function (req, res) {
         return res.render("product-add",{
     } );
     },
-    showEditar: function (req, res) {
+    edit: function (req, res) {
         return res.render("product-edit",{
     } );
     },

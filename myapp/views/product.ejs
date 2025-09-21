@@ -14,7 +14,7 @@
     <div class="container products-wrapper">
         <div class="d-flex align-items-center">
             <p class="product-detail-description">
-               <a href="http://localhost:3000/mercado/edit">Editar</a>
+               <a href="http://localhost:3000/mercado/index/detalle/edit">Editar</a>
              </p>
         </div>
         <% for( let i = 0; i < listaProducto.length; i++ ) { %>
@@ -44,7 +44,7 @@
 
         <form action="http://localhost:3000/mercado/index" method="get" class="comentario-producto">
             <p class="form-label">Agregar comentario:</p>
-            <input  class="form-input" type="text" name="comentario" value="">
+            <input class="form-input" type="text" name="comentario" value="">
             <button type="submit"   class="buy-now-button" >Enviar</button>
         </form>
         </div>

@@ -3,6 +3,6 @@ var router = express.Router();
 const pc = require('../controllers/mercadoControllers');
 
 /* GET home page. */
-router.get('/', pc.showListadoProductos);
+router.get('/', pc.index);
 
 module.exports = router;
