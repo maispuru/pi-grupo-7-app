@@ -59,6 +59,7 @@ const mercadoController= {
     showElUsuario: function (req, res) {
         let idEnviado = req.params.id;
         let datoUsuariosProductos = productosUruarios(idEnviado);
+
         return res.render("profile",{
             infoUsuario:usuario,
             produUsuario:datoUsuariosProductos,
