@@ -4,7 +4,7 @@ USE proyectoIntegrador;
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR (500) NOT NULL,
-contraseña VARCHAR (500) NOT NULL,
+contrasena VARCHAR (500) NOT NULL,
 fotoPerfil VARCHAR (500), 
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
 updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -41,23 +41,23 @@ deleteAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
 -- INSERT 
 
-INSERT INTO usuarios (id,email,contraseña, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "hola342", "url", DEFAULT, DEFAULT, DEFAULT );
-INSERT INTO usuarios (id,email,contraseña, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "chau123", "url", DEFAULT,DEFAULT,DEFAULT);
-INSERT INTO usuarios (id,email,contraseña, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "HomeroyBart",  "url", DEFAULT , DEFAULT , DEFAULT);
-INSERT INTO usuarios (id,email,contraseña, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "federicosantos@gmail.com","Lisa200", "url", DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios (id,email,contraseña, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "udesa222", "url", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "hola342", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT );
+INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "chau123", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT,DEFAULT,DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "HomeroyBart",  "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT , DEFAULT , DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "federicosantos@gmail.com","Lisa200", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "udesa222", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
 
 
-INSERT INTO productos VALUES (DEFAULT,3, "url", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 4 , "url", "iPhone 12 64GB", "Version mejorada del iphone 11, mejor bateria" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 5 , "url", "iPhone 12 mini 64GB", "Tamaño reducido, 5G" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 1 , "url", "iPhone 13 128GB", "Reconocimiento facial y buena batería" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "url", "iPhone 14 128GB", "Cámara mejorada" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 3 , "url", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "url", "iPhone 15 128GB", " tiene tipo USB-C" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "url", "iPhone 15 Pro 256GB", "Titanio y muchos colores" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "url", "iPhone 13 mini 128GB", "Pequeño y potente" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 5 , "url", "iPhone 14 Pro 128GB" , "Mejor definicion y cámaras Pro." , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT,3, "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 4 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 12 64GB", "Version mejorada del iphone 11, mejor bateria" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 5 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 12 mini 64GB", "Tamaño reducido, 5G" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 1 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 13 128GB", "Reconocimiento facial y buena batería" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 128GB", "Cámara mejorada" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 3 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 15 128GB", " tiene tipo USB-C" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 15 Pro 256GB", "Titanio y muchos colores" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 13 mini 128GB", "Pequeño y potente" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 5 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 Pro 128GB" , "Mejor definicion y cámaras Pro." , DEFAULT, DEFAULT , DEFAULT);
 
 
 INSERT INTO comentarios VALUES (DEFAULT, 1 , 1, "La batería me dura todo el día." , DEFAULT, DEFAULT, DEFAULT);
