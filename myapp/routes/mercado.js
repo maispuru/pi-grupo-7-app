@@ -9,8 +9,8 @@ router.get('/register', pc.storeRegister);
 router.get('/log', pc.showLog);
 router.get('/name/:id?', pc.showElUsuario);
 router.get('/resultados', pc.showResultados);
-router.get('/add', pc.create);
-router.get('/detalle/edit', pc.edit);
+router.get('/add', pc.showCreate);
+router.get('/detalle/edit', pc.showEdit);
 
 module.exports = router;
 //http://localhost:3000
