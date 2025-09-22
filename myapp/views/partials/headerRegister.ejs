@@ -25,17 +25,18 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="http://localhost:3000/mercado/index">Todos los productos</a></li>
+					<li><a href="http://localhost:3000/mercado/add" >Cargar producto</a></li>
 				</ul>
 				<ul class="right-navbar">
 					<li>
-						<a href="http://localhost:3000/mercado/register" > Creá tu cuenta 
-							<i class="far fa-address-card"></i>
-						</a>
+						<a href="http://localhost:3000/mercado/name/1"> <%= nombreUsuario %> <%= apellidoUsuario %><i class="fas fa-user"></i></a>
 					</li>
 					<li>
-						<a href="http://localhost:3000/mercado/log" > Ingresá 
-							<i class="fas fa-sign-in-alt"></i> 
-						</a>
+						<form action="http://localhost:3000/mercado/index" method="GET">
+							<button class="logout" type="submit">
+								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+							</button>
+						</form>
 					</li>
 				</ul>
 			</nav>

@@ -6,7 +6,7 @@ let usuario   = dbu.usuario;
 
 const mercadoController= {
     index : function (req, res) {
-        let comentarios = function todoComentarios() {
+        function todoComentarios() {
             let array = [];
             for (let i = 0; i < productos.length; i++) {
                 let idP = productos[i].id;
@@ -16,13 +16,15 @@ const mercadoController= {
             return array;
         }
         return res.render("index",{
+        nombreUsuario:(usuario.nombre),
+        apellidoUsuario:(usuario.apellido),
         listaProductos:productos,
-        comentariosTotal:comentarios(),
+        comentariosTotal:todoComentarios(),
     } );
     },
     showElUsuario: function (req, res) {
         let idEnviado = req.params.id;
-        let comentarios = function todoComentarios() {
+        function todoComentarios() {
             let array = [];
             for (let i = 0; i < productos.length; i++) {
                 let idP = productos[i].id;
@@ -31,7 +33,7 @@ const mercadoController= {
             }
             return array;
         }
-        let datoUsuariosProductos = function productosUruarios() {
+        function productosUruarios() {
             let ids = usuario.id
             let array = [];
             for (let i = 0; i < productos.length; i++) {
@@ -43,14 +45,16 @@ const mercadoController= {
             return array
         }
         return res.render("profile",{
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
             infoUsuario:usuario,
-            produUsuario:datoUsuariosProductos(idEnviado),
-            comentariosTotal:comentarios(idEnviado),
+            produUsuario:productosUruarios(idEnviado),
+            comentariosTotal:todoComentarios(idEnviado),
     } );
     },
     showPorProducto: function (req, res) {
         let idEnviado = req.params.id;
-        let detallesProducto = function producto(ids) {
+        function producto(ids) {
             let array = [];
             for (let i = 0; i < productos.length; i++) {
                 let id = productos[i].id;
@@ -60,7 +64,7 @@ const mercadoController= {
             }
             return array;
         }
-        let detalleComentarios = function comentarioProducto(ids) {
+        function comentarioProducto(ids) {
             let array = [];
             for (let i = 0; i < productos.length; i++) {
                 let id = productos[i].id;
@@ -71,22 +75,26 @@ const mercadoController= {
             return array;
         }
         return res.render("product", {
-            listaProducto: detallesProducto(idEnviado),
-            productoComentarios: detalleComentarios(idEnviado)
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
+            listaProducto: producto(idEnviado),
+            productoComentarios: comentarioProducto(idEnviado)
         });
     },
     storeRegister: function (req, res) {
         return res.render("register",{
-
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
     } );
     },
     showLog: function (req, res) {
         return res.render("login",{
-
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
     } );
     },
     showResultados: function (req, res) {
-        let comentarios = function todoComentarios() {
+        function todoComentarios() {
             let array = [];
             for (let i = 0; i < productos.length; i++) {
                 let idP = productos[i].id;
@@ -96,17 +104,23 @@ const mercadoController= {
             return array;
         }
         return res.render("search-results",{
+        nombreUsuario:(usuario.nombre),
+        apellidoUsuario:(usuario.apellido),
         listaProductos:productos,
-        comentariosTotal:comentarios(),
+        comentariosTotal:todoComentarios(),
     } );
     },
     
     showCreate: function (req, res) {
         return res.render("product-add",{
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
     } );
     },
     showEdit: function (req, res) {
         return res.render("product-edit",{
+            nombreUsuario:(usuario.nombre),
+            apellidoUsuario:(usuario.apellido),
     } );
     },
 }
