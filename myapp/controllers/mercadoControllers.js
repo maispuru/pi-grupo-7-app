@@ -1,5 +1,5 @@
 const db =require("../database/models");
-
+const bcryptjs = require('bcryptjs');
 const op = db.sequelize.Op ;
 
 

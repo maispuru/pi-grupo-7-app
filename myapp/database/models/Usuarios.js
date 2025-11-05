@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
         },
         usuario: {                  
         type: dataTypes.STRING(500),
-        allowNull: false,
+        
         },
 
         contrasena: {

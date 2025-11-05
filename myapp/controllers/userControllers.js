@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
+const op = db.sequelize.Op ;
 
 const userControllers = {
 
@@ -12,6 +13,8 @@ const userControllers = {
     }
 
   },
+
+
 
   create: function (req, res) {
     let email = req.body.email;
