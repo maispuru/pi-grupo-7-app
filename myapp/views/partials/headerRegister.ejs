@@ -29,10 +29,10 @@
 				</ul>
 				<ul class="right-navbar">
 					<li>
-						<a href="http://localhost:3000/mercado/name/1"> <%= nombreUsuario %> <%= apellidoUsuario %>  <i class="fas fa-user"></i></a>
+						<a href="/users/profile"> <%= nombreUsuario %> <%= apellidoUsuario %>  <i class="fas fa-user"></i></a>
 					</li>
 					<li>
-						<form action="http://localhost:3000/mercado/index" method="GET">
+						<form action="/users/logout" method="POST">
 							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>

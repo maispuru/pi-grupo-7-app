@@ -7,14 +7,12 @@ const userControllers = {
     show: function (req, res) {
 
     if (req.session.user != undefined) {
-      return res.redirect('/users/profile')
+      return res.redirect('/users/register')
     } else {
       return res.render("register", { error: {} });
     }
 
   },
-
-
 
   create: function (req, res) {
     let email = req.body.email;
@@ -71,7 +69,40 @@ const userControllers = {
           });
       }
       );
-}}; 
+}, 
+
+  showLogin: function (req, res) {
+    return res.render("login");
+  },
+  createLogin: function (req, res) {
+    let userInfo = {
+      id: req.body.id,
+      email: req.body.email,
+      password: req.body.contrasena,
+      recordarme: req.body.recordarme
+    };
+
+    db.Usuario.findOne({ where: { email: userInfo.email } })
+
+        .then(function(user){
+            if(user){
+                let passwordOk = bcrypt.compareSync(userInfo.password, user.password); 
+                if(passwordOk){ 
+                    req.session.user = userInfo
+                }
+                if (userInfo.recordame != undefined) {
+                    res.cookie("user", infoUser, {maxAge: 600000})
+                }
+
+                return res.redirect("/users/profile");
+                
+        }})
+
+      .catch(function (error) {
+        console.log(error);
+        return res.send("error en login");
+      });
+  }};
 
 module.exports = userControllers;
 
