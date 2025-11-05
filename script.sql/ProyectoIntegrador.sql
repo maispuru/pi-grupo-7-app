@@ -4,6 +4,7 @@ USE proyectoIntegrador;
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR (500) NOT NULL,
+usuario VARCHAR (500) NOT NULL,
 contrasena VARCHAR (500) NOT NULL,
 foto_perfil  VARCHAR (500), 
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
@@ -41,23 +42,23 @@ deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
 -- INSERT 
 
-INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "hola342", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT );
-INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "chau123", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT,DEFAULT,DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "HomeroyBart",  "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT , DEFAULT , DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com","Lisa200", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "udesa222", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "maria.aspuru", "hola342", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT );
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "ro.villafane", "chau123", "/images/user/logodigital2.png", DEFAULT,DEFAULT,DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "mateo.gonzales", "HomeroyBart",  "/images/user/logodigital2.png", DEFAULT , DEFAULT , DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com", "fede.santos", "Lisa200", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "matias.blousson", "udesa222", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT);
 
 
-INSERT INTO productos VALUES (DEFAULT,3, "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 4 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 12 64GB", "Version mejorada del iphone 11, mejor bateria" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 5 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 12 mini 64GB", "Tamaño reducido, 5G" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 1 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 13 128GB", "Reconocimiento facial y buena batería" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 128GB", "Cámara mejorada" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 3 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 15 128GB", " tiene tipo USB-C" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 15 Pro 256GB", "Titanio y muchos colores" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 2 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 13 mini 128GB", "Pequeño y potente" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 5 , "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 14 Pro 128GB" , "Mejor definicion y cámaras Pro." , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT,3, "/images/products/iphone-11.jpeg", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 4 , "/images/products/iphone-12.jpeg", "iPhone 12 64GB", "Version mejorada del iphone 11, mejor bateria" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 5 , "/images/products/iphone-12-mini.jpeg", "iPhone 12 mini 64GB", "Tamaño reducido, 5G" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 1 , "/images/products/iphone-13.jpeg", "iPhone 13 128GB", "Reconocimiento facial y buena batería" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-14.jpeg", "iPhone 14 128GB", "Cámara mejorada" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 3 , "/images/products/iphone-14-plus.jpeg", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-15.jpeg", "iPhone 15 128GB", " tiene tipo USB-C" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-15pro.jpeg", "iPhone 15 Pro 256GB", "Titanio y muchos colores" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-13pro.jpeg", "iPhone 13 mini 128GB", "Pequeño y potente" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 5 , "/images/products/iphone-14pro.jpeg", "iPhone 14 Pro 128GB" , "Mejor definicion y cámaras Pro." , DEFAULT, DEFAULT , DEFAULT);
 
 
 INSERT INTO comentarios VALUES (DEFAULT, 1 , 1, "La batería me dura todo el día." , DEFAULT, DEFAULT, DEFAULT);
