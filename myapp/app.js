@@ -4,11 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//recuperar session
+const session = require('express-session');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let mercado = require("./routes/mercado");//nuestra
 
 var app = express();
+
+//middleware de configuracion de session
+app.use(session({
+  secret: 'Codigo Secreto',
+  resave: false,
+  saveUninitialized: true,
+}));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/mercado", mercado)// ESTA ES LA NUESTRA
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

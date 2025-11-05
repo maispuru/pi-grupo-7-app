@@ -12,6 +12,7 @@ const mercadoController = {
     )},
 
       showElUsuario: function (req, res) {
+        
         let idEnviado = req.params.id;
         function todoComentarios() {
             let array = [];
@@ -113,6 +114,7 @@ const mercadoController = {
     } );
     },
 }
+
 module.exports = mercadoController ;
 
 

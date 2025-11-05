@@ -17,19 +17,23 @@
     </div>
 
     <div class="col-12 col-md-10 col-lg-8 mx-auto">
-      <form action="http://localhost:3000/mercado/register" method="GET" class="register-form">
+      <form action="/users/register" method="POST" class="register-form">
 
-        <label for="email">Correo electrónico:</label><br>
+        <label for="email">Ingrese su correo electrónico:</label><br>
         <input type="email" name="email" value=""><br><br>
+        <% if (error.email) { %><p class="error"><%= error.email %></p><% } %>
 
         <label for="usuario">Usuario:</label><br>
         <input type="text" name="usuario" value=""><br><br>
+        <% if (error.usuario) { %><p class="error"><%= error.usuario %></p><% } %>
 
         <label for="contrasena">Contrasena:</label><br>
         <input type="password" name="contrasena" value=""><br><br>
+        <% if (error.contrasena) { %><p class="error"><%= error.contrasena %></p><% } %>
 
         <label for="fotoPerfil">Foto de perfil:</label><br>
         <input type="file" name="fotoPerfil"><br><br>
+        <% if (error.fotoPerfil) { %><p class="error"><%= error.fotoPerfil %></p><% } %>
 
         <button type="submit">Registrarse</button>
       </form>

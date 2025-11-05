@@ -49,4 +49,4 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     return Comentarios;
-};
+}; 
