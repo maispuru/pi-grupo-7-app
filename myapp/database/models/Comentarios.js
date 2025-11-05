@@ -5,7 +5,7 @@ module.exports = function (sequelize, dataTypes) {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER
         },
         idUsuario: {
             type: dataTypes.INTEGER,
@@ -47,5 +47,6 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: "idProducto"
         });
     };
+
     return Comentarios;
 };

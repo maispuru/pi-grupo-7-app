@@ -1,5 +1,6 @@
-module.exports = function (sequelize, dataTypes ) {
+module.exports = function (sequelize, dataTypes) {
     let alias = "Producto";
+
     let cols = {
         id: {
             autoIncrement: true,
@@ -8,7 +9,7 @@ module.exports = function (sequelize, dataTypes ) {
         },
         idUsuario: {
             type: dataTypes.INTEGER,
-            allowNull: false,
+            allowNull: false
         },
         imagenArchivo: {
             type: dataTypes.STRING(500)
@@ -34,7 +35,7 @@ module.exports = function (sequelize, dataTypes ) {
         tableName: "productos",
         timestamps: false,
         underscored: true
-    }
+    };
 
     let Producto = sequelize.define(alias, cols, config);
     
@@ -49,5 +50,5 @@ module.exports = function (sequelize, dataTypes ) {
         });
     };
 
-    return Producto ;
-}
+    return Producto;
+};
