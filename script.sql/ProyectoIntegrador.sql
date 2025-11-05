@@ -5,47 +5,47 @@ CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR (500) NOT NULL,
 contrasena VARCHAR (500) NOT NULL,
-fotoPerfil VARCHAR (500), 
-createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-deleteAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+foto_perfil  VARCHAR (500), 
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 
 );
 
 CREATE TABLE productos (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-idUsuario INT UNSIGNED ,
-imagenArchivo VARCHAR(500),
+id_usuario  INT UNSIGNED ,
+imagen_archivo  VARCHAR(500),
 nombre VARCHAR(500) NOT NULL,
 descripcion TEXT,
-createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-deleteAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
- FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
+ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 CREATE TABLE comentarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-idUsuario INT UNSIGNED,
-idProducto INT UNSIGNED, 
+id_usuario  INT UNSIGNED,
+id_producto  INT UNSIGNED, 
 comentario TEXT NOT NULL,
-createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-deleteAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
- FOREIGN KEY (idUsuario) REFERENCES usuarios(id),
- FOREIGN KEY (idProducto) REFERENCES productos(id)
+ FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+ FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
 
 -- INSERT 
 
-INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "hola342", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT );
-INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "chau123", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT,DEFAULT,DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "HomeroyBart",  "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT , DEFAULT , DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "federicosantos@gmail.com","Lisa200", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios (id,email,contrasena, fotoPerfil, createdAt, updateAt, deleteAt ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "udesa222", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "hola342", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT );
+INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "chau123", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT,DEFAULT,DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "HomeroyBart",  "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT , DEFAULT , DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com","Lisa200", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email,contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "udesa222", "https://i.pinimg.com/originals/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg?nii=t", DEFAULT, DEFAULT, DEFAULT);
 
 
 INSERT INTO productos VALUES (DEFAULT,3, "https://www.apple.com/la/iphone/home/images/meta/iphone__cud4q04omsuq_og.png", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
