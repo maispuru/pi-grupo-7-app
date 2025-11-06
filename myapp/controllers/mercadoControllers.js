@@ -27,6 +27,7 @@ const mercadoController = {
 
   Search: function (req, res) {
     let iphone = req.query.search;
+    let error = {}
 
     if ( iphone.length > 3 && iphone == undefined){
         return res.render ( "search-results", {resultados:[] , 
