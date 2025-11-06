@@ -8,7 +8,7 @@ router.get('/index/detalle/:id?', pc.showPorProducto);
 router.get('/register', pc.storeRegister);
 router.get('/log', pc.showLog);
 router.get('/name/:id?', pc.showElUsuario);
-router.get('/resultados', pc.showResultados);
+router.get('/resultados', pc.Search);
 router.get('/add', pc.showCreate);
 router.get('/detalle/edit', pc.showEdit);
 

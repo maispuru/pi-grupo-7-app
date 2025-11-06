@@ -4,7 +4,7 @@ const op = db.sequelize.Op ;
 
 const userControllers = {
 
-    show: function (req, res) {
+  show: function (req, res) {
 
     if (req.session.user != undefined) {
       return res.redirect('/users/register')
@@ -102,7 +102,16 @@ const userControllers = {
         console.log(error);
         return res.send("error en login");
       });
-  }};
+    },
+
+   logout: function(req, res){
+        req.session.destroy();
+        res.clearCookie('user');
+
+        return res.redirect("/mercado/index");
+    }
+  
+  };
 
 module.exports = userControllers;
 
