@@ -86,11 +86,11 @@ const userControllers = {
 
         .then(function(user){
             if(user){
-                let passwordOk = bcrypt.compareSync(userInfo.password, user.password); 
+                let passwordOk = bcryptjs.compareSync(userInfo.password, user.contrasena); 
                 if(passwordOk){ 
                     req.session.user = userInfo
                 }
-                if (userInfo.recordame != undefined) {
+                if (userInfo.recordarme != undefined) {
                     res.cookie("user", infoUser, {maxAge: 600000})
                 }
 
