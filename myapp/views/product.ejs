@@ -14,7 +14,7 @@
     <div class="container products-wrapper">
         <div class="d-flex align-items-center">
             <p class="product-detail-description">
-                <a href="http://localhost:3000/mercado/detail/edit">Editar</a>
+                <a href="http://localhost:3000/mercado/detail/editgi">Editar</a>
             </p>
         </div>
 
@@ -35,33 +35,26 @@
 
                 <div class="col-12 col-lg-4">
                     <section class="comments">
-                        <% if (listaProducto.comentarios && listaProducto.comentarios.length > 0) { %>
-                            <% for (let i = 0; i < listaProducto.comentarios.length; i++) { 
-                                const c = listaProducto.comentarios[i]; %>
+                            <% for (var i = 0; i < listaProducto.comentarios.length; i++) { %>
                                 <article>
-                                    <% if (c.usuario && c.usuario.fotoPerfil) { %>
-                                        <a href="http://localhost:3000/mercado/name/<%= c.usuario.id %>">
-                                            <img src="<%= c.usuario.fotoPerfil %>" alt="Usuario">
-                                        </a>
-                                    <% } %>
+                                    <a href="/mercado/name/<%= listaProducto.comentarios[i].usuario.id %>">
+                                        <img src="<%= listaProducto.usuario.fotoPerfil %>" alt="Usuario">
+                                    </a>
                                     <div class="data">
-                                        <p class="user">
-                                            <strong><%= c.usuario ? c.usuario.usuario : 'Anónimo' %></strong>: 
-                                            <%= c.comentario %>
-                                        </p>
+                                      <p >
+                                        <%= listaProducto.comentarios[i].comentario %>
+                                      </p>
                                     </div>
                                 </article>
                             <% } %>
-                        <% } else { %>
-                            <p>No hay comentarios todavía.</p>
-                        <% } %>
                     </section>
-
+                    <% if (locals.user != undefined) { %>
                     <form action="" method="get" class="comentario-producto">
                         <p class="form-label">Agregar comentario:</p>
                         <input class="form-input" type="text" name="comentario" value="">
                         <button type="submit" class="buy-now-button">Enviar</button>
                     </form>
+                    <% } %>
                 </div>
             </div>
         </div>

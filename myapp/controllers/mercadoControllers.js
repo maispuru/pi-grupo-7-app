@@ -61,6 +61,23 @@ const mercadoController = {
     res.send("mensaje");
   },
   showPorProducto: function (req, res) {
+    let idProducto = req.params.id;
+    let idUsuario = req.params.idUsuario;
+    let texto = req.query.comentario;
+      if (texto > 0 ) {
+        let nuevoComentario = {
+            idUsuario: idUsuario,
+            idProducto: idProducto,
+            comentario: texto
+        };
+      db.Comentarios.create(nuevoComentario)
+        .then(function() {
+            console.log('Se guardo comentario');
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    }
     let idEnviado = req.params.id;
     db.Producto.findByPk(idEnviado, relacion)
       .then(function (producto) {
