@@ -49,7 +49,7 @@
                             <% } %>
                     </section>
                     <% if (locals.user != undefined) { %>
-                    <form action="" method="get" class="comentario-producto">
+                    <form action="/mercado/index/detalle/<%= listaProducto.id%>" method="POST" class="comentario-producto">
                         <p class="form-label">Agregar comentario:</p>
                         <input class="form-input" type="text" name="comentario" value="">
                         <button type="submit" class="buy-now-button">Enviar</button>

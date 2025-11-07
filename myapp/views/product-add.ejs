@@ -15,7 +15,7 @@
     <div class="col-12">
       <h2 class="products-title">Agregar productos</h2>
     </div>
-
+    <% if (locals.user != undefined) { %>
     <section class="col-12 col-md-10 col-lg-8 mx-auto">
       <form action="http://localhost:3000/mercado/add" method="GET" class="product-add-form">
         
@@ -40,6 +40,10 @@
 
       </form>
     </section>
+    <% } else { %>>
+    <p>Ingrese su perfil para creat producto</p>
+      <% } %>
+     
   </div>
 </div>
 
