@@ -26,12 +26,11 @@
                                                     <a href="http://localhost:3000/mercado/index/detalle/<%= resultados[i].id%> ">
                                                         <figure class="product-box_image">
                                                             <img src="<%= resultados[i].imagenArchivo%>"
-                                                                 alt="<%= resultados[i].nombre %>">
+                                                                 alt="Producto">
                                                         </figure>
                                                         <article class="product-box_data">
                                                             <h2><%= resultados[i].nombre %></h2>
                                                             <p><%= resultados[i].descripcion %></p>
-                                                            </a>
                                                         </article>
                                                         <article>
                                                           <% if (resultados[i].usuario) { %>
