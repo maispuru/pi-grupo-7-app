@@ -37,7 +37,7 @@
                     <section class="comments">
                             <% for (var i = 0; i < listaProducto.comentarios.length; i++) { %>
                                 <article>
-                                    <a href="/mercado/name/<%= listaProducto.comentarios[i].usuario.id %>">
+                                    <a href="http://localhost:3000/users/profile<%= listaProducto.comentarios[i].usuario.id %>">
                                         <img src="<%= listaProducto.usuario.fotoPerfil %>" alt="Usuario">
                                     </a>
                                     <div class="data">

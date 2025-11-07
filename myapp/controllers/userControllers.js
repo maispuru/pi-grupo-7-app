@@ -107,7 +107,29 @@ const userControllers = {
         return res.send("error en login");
       });
   },
-
+   Perfil: function(req , res) {
+    if(req.session.user === undefined){
+      return res.redirect("/users/login");
+    }
+    db.usuario.FindByPk(req.session.user.id)
+     .then(function(UsarioEncontrado){
+      if(UsarioEncontrado === undefined) {
+        return res.redirect("/users/login");
+      }
+      db.Producto.FindAll({
+        where: {
+          id_usuario: req.session.user.id
+        }
+      })
+      .then(function(productosUruarios){
+        let productos = productosUruarios.length
+        res.render ("profile", { UsarioEncontrado, productos, productosUruarios})
+      })
+      .catch(function (error) {
+        res.send(error);
+      });
+     })
+   },
    logout: function(req, res){
         req.session.destroy();
         res.clearCookie('user');
