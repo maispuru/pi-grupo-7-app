@@ -15,17 +15,10 @@
         <div class="col-12">
           <h2 class="products-title"> Resultados de busqueda</h2>
         </div>
-                <% if (error.resultados) { %>
-                    <p class="error"> <%= error %></p>
+                <% if ( resultados.length === 0 ) { %>
+                    <p class="error">No hay resultados para su criterio de busqueda</p>
                     <% } %>
-
-                        <% if (resultados.length === 0 && iphone.length < 3) { %>
-
-                            <p class="error">No hay resultados para su criterio de búsqueda</p>
-
-                            <% } %>
-
-                                <div class="container products-wrapper">
+                              <div class="container products-wrapper">
                                     <div class="row">
                                         <% for(let i=0; i < resultados.length; i++) { %>
                                             <div class="col-12 col-sm-6 col-lg-3">
@@ -33,28 +26,25 @@
                                                     <a href="mercado/index/detalle/<%= resultados[i].id%>">
                                                         <figure class="product-box_image">
                                                             <img src="<%= resultados[i].imagenArchivo%>"
-                                                                alt="<%= resultados[i].nombre %>">
+                                                                 alt="<%= resultados[i].nombre %>">
                                                         </figure>
                                                         <article class="product-box_data">
-                                                            <h2>
-                                                                <%= resultados[i].nombre %>
-                                                            </h2>
-                                                            <p>
-                                                                <%= resultados[i].descripcion %>
-                                                            </p>
-
-
+                                                            <h2><%= resultados[i].nombre %></h2>
+                                                            <p><%= resultados[i].descripcion %></p>
                                                         </article>
+                                                        <article>
+                                                          <% if (resultados[i].usuario) { %>
+                                                          <p class="publicado-por">
+                                                          Publicado por: 
+                                                           <a href="/users/perfil/"<%=resultados.usuario%> >
+                                                          <strong> <%= resultados[i].usuario.usuario %> </strong>
+                                                          </a>
+                                                          </p>
+                                                    
+                                                          <% } %>
+                                                      </article>
 
-                                                    </a>
-                                                    <% if ( resultados[i].idusuario) { %>
-                                                        <p>
-                                                            Subido por:
-                                                            <a href="users/profile/<%= resultados[i].idUsuario %>">
-                                                                <%= resultados[i].usuario %>
-                                                            </a>
-                                                        </p>
-                                                        <% } %>
+                                                    
                                                 </section>
                                             </div>
                                             <% } %>

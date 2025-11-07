@@ -103,7 +103,7 @@ const userControllers = {
         return res.send("error en login");
       });
     },
-
+  
    logout: function(req, res){
         req.session.destroy();
         res.clearCookie('user');

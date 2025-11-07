@@ -27,29 +27,17 @@ const mercadoController = {
 
   Search: function (req, res) {
     let iphone = req.query.search;
-    let error = {}
-
-    if ( iphone.length > 3 && iphone == undefined){
-        return res.render ( "search-results", {resultados:[] , 
-            error:"Su busqueda debe tener al menos tres caracteres", 
-            iphone });
-    }
     db.Producto.findAll({
         where: {
             nombre: {[Op.like]: '%' + iphone + '%' }
         },
         include: [
-         { association: "usuario" },
-         {association: "comentarios",
-          include: [{ association: "usuario" }],
-    },
-  ],
+         { association: "usuario" }],
     })
       .then(function (ProductosEncontrados) {
         return res.render("search-results", {
           resultados: ProductosEncontrados,
           iphone: iphone,
-          error: error,
         });
       })
       .catch(function (error) {
