@@ -15,18 +15,19 @@
   <section class="info-usuario container products-wrapper">
     <div class="row">
         <div class="img-container offset-3 col-2">
-          <img src="<%= infoUsuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
+          <img src="<%=usuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
         </div>
 
         <div class="data-container col-6">
           <div class="d-flex align-items-center">
-            <h1 class="main-title"><%= infoUsuario.nombre %></h1>
+            <h1 class="main-title"><%= usuario.usuario %></h1>
             <a href="#" class="btn mt-3 ml-4">SEGUIR</a>
           </div>
 
           <div>
             <ul>
-              <li><%= infoUsuario.email %></li>
+              <li><%= usuario.email %></li>
+              <p class="mt-2 "> Total de productos: <strong> <%= productos %></strong></p>
             </ul>
           </div>
         </div>
@@ -42,23 +43,18 @@
       </div>
 
     
-      <% for (let i = 0; i < produUsuario.length; i++) { %>
+      <% for (let i = 0; i < productosUsuarios.length; i++) { %>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
-            <a href="http://localhost:3000/mercado/index/detalle/<%= produUsuario[i].id %>">
+            <a href="http://localhost:3000/mercado/index/detalle/<%= productosUsuarios[i].id %>">
               <figure class="product-box_image">
-                <img src="<%= produUsuario[i].imagen %>" alt="Producto">
+                <img src="<%= productosUsuarios[i].imagenArchivo %>" alt="Producto">
               </figure>
 
               <article class="product-box_data">
-                <h2><%= produUsuario[i].nombre %></h2>
-                <p><%= produUsuario[i].descripcion %></p>
+                <h2><%= productosUsuarios[i].nombre %></h2>
+                <p><%= productosUsuarios[i].descripcion %></p>
 
-                <% for (let j = 0; j < comentariosTotal.length; j++) { %>
-                  <% if (comentariosTotal[j][0] == produUsuario[i].id) { %>
-                    <p>Comentarios: <%= comentariosTotal[j][1].length %></p>
-                  <% } %>
-                <% } %>
               </article>
             </a>
           </section>
