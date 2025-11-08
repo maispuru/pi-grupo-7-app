@@ -1,4 +1,3 @@
-const { Association } = require('sequelize');
 const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
 const op = db.sequelize.Op ;
@@ -109,22 +108,24 @@ const userControllers = {
     if(req.session.user === undefined){
       return res.redirect("/users/login");
     }
-    db.Usuario.findByPk(req.session.user.id , {
-      include: [{association: "productos"}]
-    })
+    db.usuario.FindByPk(req.session.user.id)
      .then(function(UsarioEncontrado){
       if(UsarioEncontrado === undefined) {
         return res.redirect("/users/login");
       }
-      let productosUsuarios = UsarioEncontrado.productos;
-      let productos = productosUsuarios.length
-
-        return res.render( "profile" , { usuario: UsarioEncontrado, productos, productosUsuarios});
-    })
-        .catch(function (error) {
+      db.Producto.FindAll({
+        where: {
+          id_usuario: req.session.user.id
+        }
+      })
+      .then(function(productosUruarios){
+        let productos = productosUruarios.length
+        res.render ("profile", { UsarioEncontrado, productos, productosUruarios})
+      })
+      .catch(function (error) {
         res.send(error);
       });
-
+     })
    },
    logout: function(req, res){
         req.session.destroy();
@@ -136,4 +137,3 @@ const userControllers = {
   };
 
 module.exports = userControllers;
-
