@@ -17,27 +17,22 @@
     </div>
     <% if (locals.user != undefined) { %>
     <section class="col-12 col-md-10 col-lg-8 mx-auto">
-      <form action="http://localhost:3000/mercado/add" method="GET" class="product-add-form">
-        
+      <form action="http://localhost:3000/mercado/add" method="POST" class="product-add-form">
         <div class="form-group">
-          <label for="imagen" class="form-label">Imagen (URL o archivo)</label>
-          <input type="text" name="imagen" value=""class="form-input">
+          <label for="imagen" class="form-label">Imagen (nombre.extensión)</label>
+          <input type="text" name="imagen" value="" class="form-input">
         </div>
-
         <div class="form-group">
           <label for="nombre" class="form-label">Nombre del producto</label>
-          <input type="text"name="nombre" value=""class="form-input" >
+          <input type="text" name="nombre" value="" class="form-input">
         </div>
-
         <div class="form-group">
           <label for="descripcion" class="form-label">Descripción</label>
-          <textarea name="descripcion" value=""class="form-input" ></textarea>
+          <textarea name="descripcion" class="form-input"></textarea>
         </div>
-
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Guardar producto</button>
         </div>
-
       </form>
     </section>
     <% } else { %>>

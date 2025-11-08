@@ -59,24 +59,35 @@ const mercadoController = {
       });
   },
   agregoComentario: function (req, res) {
-  let idProducto = req.params.id;
-    let idUsuario = req.params.idUsuario;
-    let texto = req.query.comentario;
-      if (texto > 0 ) {
-        let nuevoComentario = {
-            idUsuario: idUsuario,
-            idProducto: idProducto,
-            comentario: texto,
-            createdAt: new Date()
-        };
-        db.Comentarios.create(nuevoComentario)
-        .then(function() {
+    const idProducto = req.params.id;
+    const texto = req.body.comentario;
+    let usuarioId = null;
+    
+    if (req.session && req.session.user) {
+        usuarioId = req.session.user.id;
+    }
+        if (texto == '' || texto == undefined) {
         return res.redirect('/mercado/index');
-      })
-        .catch(function(error) {
+        
+    }
+    if (texto == '' || texto == undefined || usuarioId == null) {
+    res.redirect('/mercado/index');
+    return;
+  }
+    db.Comentarios.create({
+        comentario: texto,
+        idProducto: idProducto,
+        idUsuario: usuarioId,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    })
+    .then(function () {
+        res.redirect('/mercado/index');
+        })
+    .catch(function(error) {
             return res.send(error);
         });
-    }
+    
   },
   storeRegister: function (req, res) {
     return res.render("register", {
@@ -109,8 +120,30 @@ const mercadoController = {
   },
 
   showCreate: function (req, res) {
-    return res.render("product-add", {
-    });
+  if (req.session.user == undefined || req.session.user == null) {
+    return res.redirect('/users/log');
+  }
+  const imagen = req.body.imagen;
+  const nombre = req.body.nombre;
+  const descripcion = req.body.descripcion;
+  if (imagen == '' || nombre == '' || descripcion == '' || 
+      imagen == undefined || nombre == undefined || descripcion == undefined) {
+    return res.render('product-add', { error: 'Completá todos los campos' });
+  }
+  db.Producto.create({
+    idUsuario: req.session.user.id,     
+    imagenArchivo: '/imgs/' + imagen,   
+    nombre: nombre,
+    descripcion: descripcion,
+    createdAt: new Date(),
+  })
+  .then(function () {
+    return res.redirect('/mercado/index');
+  })
+  .catch(function (error) {
+    console.log(error);
+    return res.send('Error al crear el producto');
+  });
   },
   showEdit: function (req, res) {
     return res.render("product-edit");

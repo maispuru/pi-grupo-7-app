@@ -11,10 +11,7 @@
   --light-gray: #ffffff4a;
   --green: #4abc59;
   --base-font-family: 'Roboto', sans-serif
-}
-
-
-/*====== Basics ======*/
+}/*====== Basics ======*/
 * {
   box-sizing: border-box;
 }

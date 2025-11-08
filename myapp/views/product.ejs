@@ -37,8 +37,9 @@
                     <section class="comments">
                             <% for (var i = 0; i < listaProducto.comentarios.length; i++) { %>
                                 <article>
-                                    <a href="http://localhost:3000/users/profile<%= listaProducto.comentarios[i].usuario.id %>">
-                                        <img src="<%= listaProducto.comentarios[i].fotoPerfil %>" alt="Usuario">
+                                    <p class="cajaNombre"><%= listaProducto.comentarios[i].usuario.usuario %></p>
+                                    <a href="http://localhost:3000/users/profile/<%= listaProducto.comentarios[i].usuario.id %>">
+                                        <img src="<%= listaProducto.comentarios[i].usuario.fotoPerfil %>" alt="Usuario">
                                     </a>
                                     <div class="data">
                                       <p >
@@ -49,7 +50,7 @@
                             <% } %>
                     </section>
                     <% if (locals.user != undefined) { %>
-                    <form action="/mercado/index/detalle/<%= listaProducto.id%>" method="POST" class="comentario-producto">
+                    <form action="http://localhost:3000/mercado/detail/<%= listaProducto.id %>/comentarios" method="POST" class="comentario-producto">
                         <p class="form-label">Agregar comentario:</p>
                         <input class="form-input" type="text" name="comentario" value="">
                         <button type="submit" class="buy-now-button">Enviar</button>
