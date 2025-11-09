@@ -14,7 +14,7 @@
     <div class="container products-wrapper">
         <div class="d-flex align-items-center">
             <p class="product-detail-description">
-                <a href="http://localhost:3000/mercado/detail/editgi">Editar</a>
+                <a href="http://localhost:3000/mercado/detail/edit">Editar</a>
             </p>
         </div>
 
@@ -38,7 +38,7 @@
                             <% for (var i = 0; i < listaProducto.comentarios.length; i++) { %>
                                 <article>
                                     <p class="cajaNombre"><%= listaProducto.comentarios[i].usuario.usuario %></p>
-                                    <a href="http://localhost:3000/users/profile/<%= listaProducto.comentarios[i].usuario.id %>">
+                                    <a href="http://localhost:3000/users/profile">
                                         <img src="<%= listaProducto.comentarios[i].usuario.fotoPerfil %>" alt="Usuario">
                                     </a>
                                     <div class="data">

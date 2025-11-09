@@ -95,7 +95,7 @@ const userControllers = {
           res.cookie('user', req.session.user, { maxAge: 1000 * 60 * 5 });
         }
 
-        return res.redirect('/users/profile');
+        return res.redirect('/mercado/index');
       })
       .catch(function (error) {
         return res.send(error);

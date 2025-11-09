@@ -120,19 +120,18 @@ const mercadoController = {
   },
 
   showCreate: function (req, res) {
-  if (req.session.user == undefined || req.session.user == null) {
-    return res.redirect('/users/log');
+  if (req.session.user == undefined ) {
+    return res.redirect('/users/login');
   }
-  const imagen = req.body.imagen;
-  const nombre = req.body.nombre;
-  const descripcion = req.body.descripcion;
-  if (imagen == '' || nombre == '' || descripcion == '' || 
-      imagen == undefined || nombre == undefined || descripcion == undefined) {
+  let imagen = req.body.imagen;
+  let nombre = req.body.nombre;
+  let descripcion = req.body.descripcion;
+  if (imagen == undefined || nombre == undefined || descripcion == undefined) {
     return res.render('product-add', { error: 'Completá todos los campos' });
   }
   db.Producto.create({
     idUsuario: req.session.user.id,     
-    imagenArchivo: '/imgs/' + imagen,   
+    imagenArchivo: imagen,   
     nombre: nombre,
     descripcion: descripcion,
     createdAt: new Date(),
@@ -141,8 +140,7 @@ const mercadoController = {
     return res.redirect('/mercado/index');
   })
   .catch(function (error) {
-    console.log(error);
-    return res.send('Error al crear el producto');
+    return res.send(error);
   });
   },
   showEdit: function (req, res) {
