@@ -124,6 +124,23 @@ const userControllers = {
       });
   },
 
+  PerfilPorID: function(req, res){
+    db.Usuario.findByPk(req.params.id ,{
+      include: ['productos']
+    })
+    .then(function (usuario){
+      if(!usuario) return res.send( "este usuario no existe");
+      let productos = usuario.productos.length;
+      let productosUsuarios = usuario.productos;
+      
+      res.render("profile",{ usuario, productos, productosUsuarios});
+    })
+    .catch(function(error){
+      res.send(error)
+    });
+    },
+  
+
   logout: function(req, res){
     req.session.destroy();
     res.clearCookie('user');
