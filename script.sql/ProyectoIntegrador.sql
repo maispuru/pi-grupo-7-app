@@ -42,11 +42,11 @@ deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
 -- INSERT 
 
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "maria.aspuru", "hola342", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT );
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "ro.villafane", "chau123", "/images/user/logodigital2.png", DEFAULT,DEFAULT,DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "mateo.gonzales", "HomeroyBart",  "/images/user/logodigital2.png", DEFAULT , DEFAULT , DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com", "fede.santos", "Lisa200", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "matias.blousson", "udesa222", "/images/user/logodigital2.png", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "maria.aspuru", "hola342", "/images/user/imagen-mujer.jpeg", DEFAULT, DEFAULT, DEFAULT );
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "ro.villafane", "chau123", "/images/user/imagen-mujer.jpeg", DEFAULT,DEFAULT,DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "mateo.gonzales", "HomeroyBart",  "/images/user/imagen-varon.jpeg", DEFAULT , DEFAULT , DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com", "fede.santos", "Lisa200", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "matias.blousson", "udesa222", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
 
 
 INSERT INTO productos VALUES (DEFAULT,3, "/images/products/iphone-11.jpeg", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
@@ -54,7 +54,7 @@ INSERT INTO productos VALUES (DEFAULT, 4 , "/images/products/iphone-12.jpeg", "i
 INSERT INTO productos VALUES (DEFAULT, 5 , "/images/products/iphone-12-mini.jpeg", "iPhone 12 mini 64GB", "Tamaño reducido, 5G" , DEFAULT, DEFAULT , DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, 1 , "/images/products/iphone-13.jpeg", "iPhone 13 128GB", "Reconocimiento facial y buena batería" , DEFAULT, DEFAULT , DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-14.jpeg", "iPhone 14 128GB", "Cámara mejorada" , DEFAULT, DEFAULT , DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, 3 , "/images/products/iphone-14-plus.jpeg", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 3 , "/images/products/iphone14-plus.jpeg", "iPhone 14 Plus 128GB", "Pantalla mas grande y gran batería" , DEFAULT, DEFAULT , DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-15.jpeg", "iPhone 15 128GB", " tiene tipo USB-C" , DEFAULT, DEFAULT , DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-15pro.jpeg", "iPhone 15 Pro 256GB", "Titanio y muchos colores" , DEFAULT, DEFAULT , DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, 2 , "/images/products/iphone-13pro.jpeg", "iPhone 13 mini 128GB", "Pequeño y potente" , DEFAULT, DEFAULT , DEFAULT);

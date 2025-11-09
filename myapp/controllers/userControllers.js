@@ -116,7 +116,7 @@ const userControllers = {
         })
         .then(function(productosUsuarios){
           let productos = productosUsuarios.length;
-          return res.render("profile", { UsuarioEncontrado, productos, productosUsuarios });
+          return res.render("profile", { usuario: UsuarioEncontrado, productos, productosUsuarios });
         })
         .catch(function (error) {
           return res.send(error);
