@@ -16,6 +16,9 @@ const userControllers = {
     let email = req.body.email;
     let contrasena = req.body.contrasena;
     let error = {};
+    if (req.session.user != undefined) {
+      return res.redirect('/mercado/index'); 
+    }
 
     if (usuario === '') {
       error.usuario = 'Nombre de usuario obligatorio';
@@ -63,12 +66,19 @@ const userControllers = {
   },
 
   showLogin: function (req, res) {
+    if (req.session.user != undefined) {
+      return res.redirect('/mercado/index'); 
+    }
     return res.render("login");
   },
   
   createLogin: function (req, res) {
     let email = req.body.email;
     let password = req.body.contrasena;
+
+    if (req.session.user != undefined) {
+      return res.redirect('/mercado/index'); 
+    }
     if (email == "" || password == "") {
         return res.send("error");
     }

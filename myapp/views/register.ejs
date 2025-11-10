@@ -36,7 +36,7 @@
         <% if (error.contrasena) { %><p class="error"><%= error.contrasena %></p><% } %>
 
         <label for="fotoPerfil">Foto de perfil:</label><br>
-        <input type="file" name="fotoPerfil"><br><br>
+        <input type="text" name="imagen" id="imagen" class="form-input" placeholder="https://ejemplo.com/foto.png">
         <% if (error.fotoPerfil) { %><p class="error"><%= error.fotoPerfil %></p><% } %>
 
         <button type="submit">Registrarse</button>

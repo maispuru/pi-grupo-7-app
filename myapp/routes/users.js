@@ -7,7 +7,7 @@ router.post('/register', userControllers.create);
 router.get ("/profile", userControllers.Perfil)
 router.get('/login', userControllers.showLogin);
 router.post('/login', userControllers.createLogin);
-router.get('/logout', userControllers.logout);
+router.post('/logout', userControllers.logout);
 router.get ("/profile/:id", userControllers.PerfilPorID);
 
 module.exports = router;
