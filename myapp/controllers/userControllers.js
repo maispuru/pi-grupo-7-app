@@ -106,7 +106,7 @@ const userControllers = {
     }
     db.Usuario.findByPk(req.session.user.id)
       .then(function(UsuarioEncontrado){
-        if (!UsuarioEncontrado) {
+        if (UsuarioEncontrado != undefined) {
           return res.redirect("/users/login");
         }
         db.Producto.findAll({
@@ -127,7 +127,7 @@ const userControllers = {
       include: ['productos']
     })
     .then(function (usuario){
-      if(!usuario) return res.send( "este usuario no existe");
+      if(usuario === undefined) return res.send( "este usuario no existe");
       let productos = usuario.productos.length;
       let productosUsuarios = usuario.productos;
       
