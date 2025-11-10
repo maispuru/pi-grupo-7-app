@@ -70,13 +70,13 @@ const userControllers = {
     let email = req.body.email;
     let password = req.body.contrasena;
     if (email == "" || password == "") {
-      return res.render('login', { error: 'Completá todos los campos.' });
+        return res.send("error");
     }
 
     db.Usuario.findOne({ where: { email: email } })
       .then(function (user) {
         if (user == undefined) {
-          return res.render('login', { error: 'El usuario no existe en la base de datos.' });
+            return res.send("error");
         }
 
         let ok = bcryptjs.compareSync(password, user.contrasena);
