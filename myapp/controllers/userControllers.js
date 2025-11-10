@@ -19,15 +19,15 @@ const userControllers = {
 
     if (usuario === '') {
       error.usuario = 'Nombre de usuario obligatorio';
-      return res.render('register', { error });
+      return res.send("error");
     }
     if (email === '') {
       error.email = 'Email obligatorio';
-      return res.render('register', { error });
+      return res.send("error");
     }
     if (contrasena === '' || contrasena.length < 3) {
       error.contrasena = 'La contraseña debe tener al menos 3 caracteres';
-      return res.render('register', { error });
+      return res.send("error");
     }
 
     db.Usuario.findOne({ where: { email: email } })
@@ -69,19 +69,19 @@ const userControllers = {
   createLogin: function (req, res) {
     let email = req.body.email;
     let password = req.body.contrasena;
-    if (email == "" || password == "") {
-      return res.render('login', { error: 'Completá todos los campos.' });
+    if (email == " " || password == " ") {
+      return res.send("error");
     }
 
     db.Usuario.findOne({ where: { email: email } })
       .then(function (user) {
         if (user == undefined) {
-          return res.render('login', { error: 'El usuario no existe en la base de datos.' });
+            return res.send("error");
         }
 
         let ok = bcryptjs.compareSync(password, user.contrasena);
         if (ok != true) {
-          return res.render('login', { error: 'Email o contraseña inválidos.' });
+            return res.send("error");
         }
 
         req.session.user = {
@@ -127,7 +127,8 @@ const userControllers = {
       include: ['productos']
     })
     .then(function (usuario){
-      if(usuario === undefined) return res.send( "este usuario no existe");
+      if(usuario === null){
+      return res.send( "este usuario no existe")};
       let productos = usuario.productos.length;
       let productosUsuarios = usuario.productos;
       

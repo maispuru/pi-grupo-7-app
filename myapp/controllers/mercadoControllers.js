@@ -66,11 +66,11 @@ const mercadoController = {
     if (req.session && req.session.user) {
         usuarioId = req.session.user.id;
     }
-        if (texto == '' || texto == undefined) {
+        if (texto == undefined) {
         return res.redirect('/mercado/index');
         
     }
-    if (texto == '' || texto == undefined || usuarioId == null) {
+    if (texto == undefined || usuarioId == null) {
     res.redirect('/mercado/index');
     return;
   }
