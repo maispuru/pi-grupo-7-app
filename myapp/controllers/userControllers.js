@@ -69,7 +69,6 @@ const userControllers = {
   createLogin: function (req, res) {
     let email = req.body.email;
     let password = req.body.contrasena;
-
     if (email == "" || password == "") {
       return res.render('login', { error: 'Completá todos los campos.' });
     }
@@ -94,8 +93,7 @@ const userControllers = {
         if (req.body.recordarme != undefined) {
           res.cookie('user', req.session.user, { maxAge: 1000 * 60 * 5 });
         }
-
-        return res.redirect('/mercado/index');
+        return res.redirect('/users/profile');
       })
       .catch(function (error) {
         return res.send(error);
@@ -144,7 +142,7 @@ const userControllers = {
   logout: function(req, res){
     req.session.destroy();
     res.clearCookie('user');
-    return res.redirect("/mercado/index");
+    return res.redirect("/");
   }
 };
 
