@@ -28,9 +28,15 @@
                   <h2><%= listaProductos[i].nombre %></h2>
                   <p><%= listaProductos[i].descripcion %></p>
                   
-                  <% for (let j = 0; j < listaProductos[i].comentarios.length; j++) { %>
-                    <p>Comentarios: <%= listaProductos[i].comentarios.length %></p>
-                  <% } %>
+                  <p>Comentarios: <%= listaProductos[i].comentarios.length %></p>
+                  <p class="publicado-por"> 
+                    Publicado por: 
+                    <a href="http://localhost:3000/users/profile/<%= listaProductos[i].usuario.id %>">
+                    <strong> <%= listaProductos[i].usuario.usuario %> </strong>
+                   </a>
+                   </p>
+                                                    
+   
 
                 </article>
               </a>
