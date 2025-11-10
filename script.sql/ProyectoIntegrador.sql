@@ -42,11 +42,11 @@ deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 
 -- INSERT 
 
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "maria.aspuru", "hola342", "/images/user/imagen-mujer.jpeg", DEFAULT, DEFAULT, DEFAULT );
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "ro.villafane", "chau123", "/images/user/imagen-mujer.jpeg", DEFAULT,DEFAULT,DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "mateo.gonzales", "HomeroyBart",  "/images/user/imagen-varon.jpeg", DEFAULT , DEFAULT , DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com", "fede.santos", "Lisa200", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "matias.blousson", "udesa222", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mariaaspuru@gmail.com", "maria.aspuru", "$2b$10$jSn.gnxb3Zoy0L1eyZ05COdsnMJBlJpkgSi.v42o/C3khpHHBDQkq", "/images/user/imagen-mujer.jpeg", DEFAULT, DEFAULT, DEFAULT );
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "rvillafane@udesa.edu.ar", "ro.villafane", "$2b$10$jSn.gnxb3Zoy0L1eyZ05COdsnMJBlJpkgSi.v42o/C3khpHHBDQkq", "/images/user/imagen-mujer.jpeg", DEFAULT,DEFAULT,DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "mateogonzales@gmail.com", "mateo.gonzales", "$2b$10$jSn.gnxb3Zoy0L1eyZ05COdsnMJBlJpkgSi.v42o/C3khpHHBDQkq",  "/images/user/imagen-varon.jpeg", DEFAULT , DEFAULT , DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "federicosantos@gmail.com", "fede.santos", "$2b$10$jSn.gnxb3Zoy0L1eyZ05COdsnMJBlJpkgSi.v42o/C3khpHHBDQkq", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios (id,email, usuario, contrasena, foto_perfil, created_at, updated_at, deleted_at ) VALUES ( DEFAULT, "matiasblousson@gmail.com", "matias.blousson", "$2b$10$jSn.gnxb3Zoy0L1eyZ05COdsnMJBlJpkgSi.v42o/C3khpHHBDQkq", "/images/user/imagen-varon.jpeg", DEFAULT, DEFAULT, DEFAULT);
 
 
 INSERT INTO productos VALUES (DEFAULT,3, "/images/products/iphone-11.jpeg", "iPhone 11 64GB", "Doble camara, Diversos colores" , DEFAULT, DEFAULT , DEFAULT);
