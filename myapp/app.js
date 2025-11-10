@@ -15,29 +15,29 @@ var app = express();
 
 app.use(cookieParser()); 
 
-//middleware de configuracion de session
+
 app.use(session({
   secret: 'Codigo Secreto',
   resave: false,
   saveUninitialized: true,
 }));
-//middleware para tener session disponible en las vistas
+
 app.use(function(req, res, next){
-  if(req.session.user != undefined){ //el user esta logueado
-    res.locals.user = req.session.user; //si estoy logueaddo que aca en esta linea ya estoy, envio la info en las vistas
+  if(req.session.user != undefined){ 
+    res.locals.user = req.session.user; 
   }
   return next();
 });
-//middleware para tener la cookie disponible en las vistas
-// middleware de Cookies hacia Vistas
+
+
 app.use(function(req, res, next) {
 
 console.log(req.cookies.user);
   
   
 if (req.cookies.user != undefined && req.session.user == undefined) {
-    res.locals.user = req.cookies.user;   // uno lo envia a las vistas (partials)
-    req.session.user = req.cookies.user;  // otro lo vuelve a poner en session
+    res.locals.user = req.cookies.user;   
+    req.session.user = req.cookies.user; 
   }
 
   return next();

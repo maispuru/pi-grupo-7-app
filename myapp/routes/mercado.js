@@ -15,4 +15,3 @@ router.get('/name/:id?', pc.showElUsuario);
 router.get('/index/detalle/:id?', pc.showPorProducto);
 router.post('/detail/:id/comentarios', pc.agregoComentario);
 module.exports = router;
-//http://localhost:3000
