@@ -37,15 +37,14 @@
                                                             <p><%= resultados[i].descripcion %></p>
                                                         </article>
                                                         <article>
-                                                          <% if (resultados[i].usuario) { %>
+
                                                           <p class="publicado-por">
                                                           Publicado por: 
-                                                           <a href="http://localhost:3000/users/profile/<%= resultados[i].usuario.id %>"<%=resultados.usuario%> >
+                                                           <a href="http://localhost:3000/users/profile/<%= resultados[i].usuario.id %>" >
                                                           <strong> <%= resultados[i].usuario.usuario %> </strong>
                                                           </a>
                                                           </p>
-                                                    
-                                                          <% } %>
+                                          
                                                       </article>
 
                                                     
