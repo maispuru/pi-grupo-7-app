@@ -69,14 +69,14 @@ const userControllers = {
   createLogin: function (req, res) {
     let email = req.body.email;
     let password = req.body.contrasena;
-    if (email == " " || password == " ") {
-      return res.send("error");
+    if (email == "" || password == "") {
+      return res.render('login', { error: 'Completá todos los campos.' });
     }
 
     db.Usuario.findOne({ where: { email: email } })
       .then(function (user) {
         if (user == undefined) {
-            return res.send("error");
+          return res.render('login', { error: 'El usuario no existe en la base de datos.' });
         }
 
         let ok = bcryptjs.compareSync(password, user.contrasena);
@@ -89,11 +89,11 @@ const userControllers = {
           name: user.usuario,
           email: user.email
         };
-
+        let idP = req.session.user.id
         if (req.body.recordarme != undefined) {
           res.cookie('user', req.session.user, { maxAge: 1000 * 60 * 5 });
         }
-        return res.redirect('/users/profile');
+        return res.redirect('/users/profile/'+idP);
       })
       .catch(function (error) {
         return res.send(error);
