@@ -10,8 +10,11 @@
 
 </head>
 <body>
-  <%- include('./partials/header.ejs') %>
-    <%- include('./partials/footer.ejs') %>
+    <% if (locals.user != undefined) { %>
+      <%- include("./partials/headerLogueado.ejs") %>
+    <% } else { %>
+      <%- include('./partials/header.ejs') %>
+    <% } %>
 </body>
 
 </html>

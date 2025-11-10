@@ -9,7 +9,11 @@
     <title>DigitalMac</title>
 </head>
 <body>
-    <%- include('./partials/header.ejs') %>
+    <% if (locals.user != undefined) { %>
+      <%- include("./partials/headerLogueado.ejs") %>
+    <% } else { %>
+      <%- include('./partials/header.ejs') %>
+    <% } %>
     <div class="container products-wrapper">
     <div class="row">
     <div class="col-12">
